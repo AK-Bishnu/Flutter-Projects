@@ -1,2 +1,4 @@
 "Snake Game" 
-https://github.com/AK-Bishnu/Flutter-Projects/blob/main/Snake%20Game/Screenshot_20250203-161311.jpg
+<br>
+![Game Screenshot](https://raw.githubusercontent.com/your-username/repo-name/main/screenshots/gameplay.png)
+
