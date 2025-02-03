@@ -1,3 +1,3 @@
 # Snake Game  
-<img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Snake%20Game/Screenshot_20250203-161311.jpg?raw=true" width="300" height="300">
+<img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Snake%20Game/Screenshot_20250203-161311.jpg?raw=true" width="250" height="300">
 
