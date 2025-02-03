@@ -24,8 +24,8 @@ Here are some screenshots of the game in action:
 
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165014.jpg" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165025.jpg" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165030.jpg" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165035.jpg" width="180" height="300">
+  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165021.jpg" width="180" height="300" style="margin-right: 20px;">
+  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165129.jpg" width="180" height="300" style="margin-right: 20px;">
+  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165149.jpg" width="180" height="300">
 </div>
 
