@@ -22,7 +22,7 @@ This is a classic game where different shaped blocks fall from the top of the sc
 Here are some screenshots of the game in action:
 
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165014.jpg" width="180" height="300" style="margin-right: 20px;">
+  <img src="https://github.com/user-attachments/assets/de0b13fc-a461-44e1-8fc7-070bbe0f3667" width="180" height="300" style="margin-right: 20px;">
   <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165021.jpg" width="180" height="300" style="margin-right: 20px;">
   <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165129.jpg" width="180" height="300" style="margin-right: 20px;">
   <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165149.jpg" width="180" height="300">
