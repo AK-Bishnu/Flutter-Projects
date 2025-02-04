@@ -23,8 +23,8 @@ Here are some screenshots of the game in action:
 
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   <img src="https://github.com/user-attachments/assets/de0b13fc-a461-44e1-8fc7-070bbe0f3667" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165021.jpg" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165129.jpg" width="180" height="300" style="margin-right: 20px;">
-  <img src="https://raw.githubusercontent.com/AK-Bishnu/Flutter-Projects/main/Tetris%20Game/Screenshot_20250203-165149.jpg" width="180" height="300">
+  <img src="https://github.com/user-attachments/assets/77857707-cf8a-48b7-ba86-5f2fb47dab66" width="180" height="300" style="margin-right: 20px;">
+  <img src="https://github.com/user-attachments/assets/5b0f006c-3cab-400b-aa8f-63c770c1cf21" width="180" height="300" style="margin-right: 20px;">
+  <img src="https://github.com/user-attachments/assets/b802da1a-1144-4d08-97a1-e0c4a6352e88" width="180" height="300">
 </div>
 
