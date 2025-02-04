@@ -15,7 +15,6 @@ This is a classic game where different shaped blocks fall from the top of the sc
 
 ## 🛠️ Features
 - Simple and **addictive gameplay**.
-- **Responsive controls** for mobile and desktop.
 - **Real-time score tracking**.
 - Smooth animations and block movements.
 
