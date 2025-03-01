@@ -40,7 +40,7 @@ class _HomescreenState extends State<Homescreen> {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => selectionScreen(),
+                builder: (context) => SelectionScreen(),
               ));
         },
         child: Stack(children: [

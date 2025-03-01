@@ -1,16 +1,18 @@
+import 'package:c_with_fun/Pages/level_screen.dart';
+import 'package:c_with_fun/data/stages_data.dart';
 import 'package:flutter/material.dart';
 import 'package:c_with_fun/Pages/resultantScreen.dart';
 import 'package:code_text_field/code_text_field.dart';
 import 'package:highlight/languages/cpp.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';  // ✅ Import SharedPreferences
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CodeEditorScreen extends StatefulWidget {
   final String prb;
   final String expOut;
-  final int stage;  // ✅ Added stage number
-  final int level;  // ✅ Added level number
+  final int stage;
+  final int level;
 
   CodeEditorScreen({super.key, required this.prb, required this.expOut, required this.stage, required this.level});
 
@@ -53,29 +55,30 @@ int main() {
         String actualOutput = responseData['output'].trim();
         String expOutput = widget.expOut.trim();
 
-        // Normalize whitespace
         actualOutput = actualOutput.replaceAll(RegExp(r'\s+'), ' ');
         expOutput = expOutput.replaceAll(RegExp(r'\s+'), ' ');
 
         bool isCorrect = (actualOutput == expOutput);
 
         if (isCorrect) {
-          await unlockNextLevel(widget.stage, widget.level);  // ✅ Unlock next level
+          await unlockNextLevel(widget.stage, widget.level);
         }
 
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => ResultScreen(
               isSuccess: isCorrect,
               ExpOut: expOutput,
               ActOut: actualOutput,
-              onContinue:() async{
+              onContinue: () async {
+                Navigator.pop(context, true);
                 await unlockNextLevel(widget.stage, widget.level);
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => ,),
-                    (route) => false,
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LevelScreen(stage: stages[widget.stage - 1]),
+                  ),
                 );
               },
               onRetry: () => Navigator.pop(context),
@@ -90,12 +93,30 @@ int main() {
     }
   }
 
-  /// 🔓 Unlocks the next level
   Future<void> unlockNextLevel(int stage, int level) async {
     final prefs = await SharedPreferences.getInstance();
     int nextLevel = level + 1;
-    await prefs.setBool('stage_${stage}_level_$nextLevel', true);
+
+    List<String> unlockedLevels = prefs.getStringList('stage_${stage}_levels') ?? ['1'];
+
+    if (!unlockedLevels.contains(nextLevel.toString())) {
+      unlockedLevels.add(nextLevel.toString());
+      await prefs.setStringList('stage_${stage}_levels', unlockedLevels);
+    }
+
+    // 🔥 Unlock next stage if the current stage is fully completed
+    int totalLevelsInStage = stages[stage - 1].levels.length;
+    if (level == totalLevelsInStage) {
+      int nextStage = stage + 1;
+      List<String> unlockedStages = prefs.getStringList('unlocked_stages') ?? ['1'];
+
+      if (!unlockedStages.contains(nextStage.toString())) {
+        unlockedStages.add(nextStage.toString());
+        await prefs.setStringList('unlocked_stages', unlockedStages);
+      }
+    }
   }
+
 
   void _showError(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -123,8 +144,8 @@ int main() {
           child: Padding(
             padding: const EdgeInsets.only(left: 16.0, right: 16.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                // Problem Statement Section
                 Container(
                   width: double.infinity,
                   padding: EdgeInsets.all(12),
@@ -154,10 +175,8 @@ int main() {
                   ),
                 ),
                 SizedBox(height: 15),
-
-                // Code Editor
                 Container(
-                  height: 300,
+                  height: 370,
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: Colors.black,
@@ -170,26 +189,13 @@ int main() {
                   ),
                 ),
                 SizedBox(height: 20),
-
-                // Run Code Button
                 ElevatedButton(
                   onPressed: _runCode,
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 28),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                    backgroundColor: Colors.blue.shade700,
-                    foregroundColor: Colors.white,
-                  ),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.play_arrow, color: Colors.white, size: 24),
-                      SizedBox(width: 10),
-                      Text("Run Code", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, letterSpacing: 0.5)),
-                    ],
+                    children: [Icon(Icons.play_arrow), SizedBox(width: 10), Text("Run Code")],
                   ),
                 ),
-                SizedBox(height: 20),
               ],
             ),
           ),
